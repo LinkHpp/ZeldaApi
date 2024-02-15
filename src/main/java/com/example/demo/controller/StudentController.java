@@ -102,7 +102,7 @@ public class StudentController {
         return iStudentRepository.findById(id);
     }
 
-    @Operation(summary = "Elimina un producto")
+    @Operation(summary = "Elimina un estudiante")
     @ApiResponses(value = {
             @ApiResponse(
                     responseCode = "204",
