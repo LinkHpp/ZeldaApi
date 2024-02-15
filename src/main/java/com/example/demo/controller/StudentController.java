@@ -13,34 +13,34 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class StudentController {
     @Autowired
-    private ICourseRepository ICourseRepository;
+    private ICourseRepository iCourseRepository;
 
     @GetMapping("/courses")
     public List<Course> getAllCourses(){
-        return ICourseRepository.findAll();
+        return iCourseRepository.findAll();
     }
     @PostMapping("/courses/new")
     public Course addCourse(@RequestBody Course newCourse){
-        return ICourseRepository.save(newCourse);
+        return iCourseRepository.save(newCourse);
     }
     @PostMapping("/courses/edit/{id}")
     public Course editCourse(@PathVariable Integer id, @RequestBody Course course){
-        Optional<Course> courseOptional = ICourseRepository.findById(id);
+        Optional<Course> courseOptional = iCourseRepository.findById(id);
         if(courseOptional.isPresent()){
             Course currentCourse = courseOptional.get();
             currentCourse.setTitle(course.getTitle());
             currentCourse.setPrice(course.getPrice());
-            return ICourseRepository.save(currentCourse);
+            return iCourseRepository.save(currentCourse);
         }
         return null;
     }
     @GetMapping("/courses/{id}")
     public Optional<Course> getCourseById(@PathVariable Integer id){
-        return ICourseRepository.findById(id);
+        return iCourseRepository.findById(id);
     }
     @DeleteMapping("/courses/{id}")
     public void deleteCourse(@PathVariable Integer id){
-        ICourseRepository.deleteById(id);
+        iCourseRepository.deleteById(id);
     }
 
 }

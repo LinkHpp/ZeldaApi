@@ -1,19 +1,15 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
-
-import static jakarta.persistence.GenerationType.AUTO;
 
 @Data
 @Entity
+@Table(name = "students_db")
 public class Course {
-    @Id
-    @GeneratedValue(strategy = AUTO)
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_Courses")
     private Integer id;
 
