@@ -8,14 +8,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class StudentConfig {
+public class GamesConfig {
 
     @Bean
     public OpenAPI customOpenApi(){
         return new OpenAPI()
                 .components(new Components())
-                .info(new Info().title("Student API")
-                        .description("Ejemplo API REST")
+                .info(new Info().title("Games API")
+                        .description("API REST para videojuegos")
                         .contact(new Contact()
                                 .name("Hermes Pérez Parrondo")
                                 .email("herperpar@alu.edu.gva.es")
